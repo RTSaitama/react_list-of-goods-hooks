@@ -44,7 +44,7 @@ export const App: React.FC = () => {
     setReversed(false);
   };
 
-  let sortedGoods = [...preparedGoods];
+  const sortedGoods = [...preparedGoods];
 
   switch (sortType) {
     case 'alphabetically':

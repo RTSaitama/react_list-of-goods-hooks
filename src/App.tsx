@@ -4,6 +4,7 @@ import './App.scss';
 import { Good } from './types/Good';
 import { Callback } from './types/Callback';
 import classNames from 'classnames';
+import { TypeSorts } from './types/TypeSorts';
 
 export const goodsFromServer: string[] = [
   'Dumplings',
@@ -24,8 +25,8 @@ const preparedGoods: Good[] = goodsFromServer.map((good, index) => ({
 }));
 
 export const App: React.FC = () => {
-  const [sortType, setSortType] = useState('');
-  const [reversed, setReversed] = useState(false);
+  const [sortType, setSortType] = useState<TypeSorts>('');
+  const [reversed, setReversed] = useState<boolean>(false);
 
   const handleSortClick: Callback = toSortBy => {
     if (sortType !== toSortBy) {
@@ -35,7 +36,7 @@ export const App: React.FC = () => {
     }
   };
 
-  const handleReverseClick = () => {
+  const handleReverseClick: () => void = () => {
     setReversed(prev => !prev);
   };
 

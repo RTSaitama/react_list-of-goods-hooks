@@ -1,1 +1,1 @@
-export type Callback = (sortType: string) => void;
+export type Callback = (toSortBy: 'alphabetically' | 'length') => void;
